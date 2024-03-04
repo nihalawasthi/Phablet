@@ -9,11 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body class="light-mode">
     <div class="curtain">
         <div class="socket">
             <div class="gel center-gel">
@@ -51,13 +52,13 @@
                 <div class="hex-brick h2"></div>
                 <div class="hex-brick h3"></div>
             </div>
-    
+
             <div class="gel c7 r2">
                 <div class="hex-brick h1"></div>
                 <div class="hex-brick h2"></div>
                 <div class="hex-brick h3"></div>
             </div>
-    
+
             <div class="gel c8 r2">
                 <div class="hex-brick h1"></div>
                 <div class="hex-brick h2"></div>
@@ -205,49 +206,91 @@
             </div>
         </div>
     </div>
-    <div id="parallax" class="loading parallax">
-        <div class="parallax__content">
-            <h1 id="movingHeading">Phablet</h1>
-        </div>
 
-        <div class="parallax__layer parallax__layer__0">
-            <img src="public/layer_0.png?raw=true" />
-        </div>
+    <div>
 
-        <div class="parallax__layer parallax__layer__1">
-            <img src="public/layer_1.png?raw=true" />
-        </div>
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <nav class="navbar">
+                <a href="#About">About</a>
+                <a href="#About">About</a>
+                <a href="#Contact">Contact</a>
+                <a class="switch" onclick="myFunction()">
+                    <i id="switch" data-lucide="moon"></i>
+                </a>
+            </nav>
+        </header>
 
-        <div class="parallax__layer parallax__layer__2">
-            <img src="public/layer_2.png?raw=true" />
-        </div>
+        <div id="parallax" class="loading parallax">
+            <div class="parallax__content">
+                <h1 id="movingHeading">Phablet</h1>
+            </div>
 
-        <div class="parallax__layer parallax__layer__3">
-            <img src="public/layer_3.png?raw=true" />
-        </div>
+            <div class="parallax__layer parallax__layer__0">
+            </div>
 
-        <div class="parallax__layer parallax__layer__4">
-            <img src="public/layer_4.png?raw=true" />
-        </div>
+            <div class="parallax__layer parallax__layer__1">
+                <img src="public/layer_1.png?raw=true" />
+            </div>
 
-        <div class="parallax__layer parallax__layer__5">
-            <img src="public/layer_5.png?raw=true" />
-        </div>
+            <div class="parallax__layer parallax__layer__2">
+                <img src="public/layer_2.png?raw=true" />
+            </div>
 
-        <div class="parallax__layer parallax__layer__6">
-            <img src="public/layer_6.png?raw=true" />
-        </div>
+            <div class="parallax__layer parallax__layer__3">
+                <img src="public/layer_3.png?raw=true" />
+            </div>
 
-        <div class="parallax__cover">
-            <h2>What is Phablet ?</h2>
+            <div class="parallax__layer parallax__layer__4">
+                <img src="public/layer_4.png?raw=true" />
+            </div>
+
+            <div class="parallax__layer parallax__layer__5">
+                <img src="public/layer_5.png?raw=true" />
+            </div>
+
+            <div class="parallax__layer parallax__layer__6">
+                <img src="public/layer_6.png?raw=true" />
+            </div>
+
+            <div id="About" class="parallax__cover">
+                <div class="cover__content">
+                    <h2>What is Phablet?</h2>
+                    <p>The Phablet encryption algorithm is an intricate and robust multi-layered
+                        encryption scheme designed to safeguard plaintext data. It encompasses a series of
+                        sequential steps, integrating various sophisticated cryptographic techniques such as
+                        substitution-permutation networks (SPNs)</p>
+                    <a href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Give it a Try
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+
+    <a href="#home"><i aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></i></a>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     <script>
+        lucide.createIcons();
+
+        function myFunction() {
+            var body = document.body;
+            body.classList.toggle("light-mode");
+            body.classList.toggle("dark-mode");
+
+            var switchIcon = document.getElementById('switch');
+            switchIcon.dataset.lucide = switchIcon.dataset.lucide === 'moon' ? 'sun' : 'moon';
+            lucide.createIcons();
+        }
+
         window.addEventListener('load', function () {
             var socket = document.querySelector('.socket');
             var curtain = document.querySelector('.curtain');
