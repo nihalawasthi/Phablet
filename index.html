@@ -8,10 +8,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.58/build/spline-viewer.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="dark-mode">
     <header>
         <a href="#" class="logo">Logo</a>
         <nav class="navbar">
@@ -26,25 +27,7 @@
     </header>
     <div class="parallax">
         <div class="parallax__content">
-            <h1>Phablet</h1>
-        </div>
-        <div class="parallax__layer parallax__layer__1">
-            <img src="public/layer_1.png?raw=true" />
-        </div>
-        <div class="parallax__layer parallax__layer__2">
-            <img src="public/layer_2.png?raw=true" />
-        </div>
-        <div class="parallax__layer parallax__layer__3">
-            <img src="public/layer_3.png?raw=true" />
-        </div>
-        <div class="parallax__layer parallax__layer__4">
-            <img src="public/layer_4.png?raw=true" />
-        </div>
-        <div class="parallax__layer parallax__layer__5">
-            <img src="public/layer_5.png?raw=true" />
-        </div>
-        <div class="parallax__layer parallax__layer__6">
-            <img src="public/layer_6.png?raw=true" />
+            <spline-viewer url="https://prod.spline.design/J7UmrpD2GUpRdEUW/scene.splinecode" style="color: black;"></spline-viewer>
         </div>
         <div id="About" class="parallax__cover">
             <div class="cover__content">
@@ -63,30 +46,29 @@
             </div>
         </div>
     </div>
+    <button class="scroll-top" onclick="scrollToTop()"><i aria-label="ScrollTop" class="fa fa-angle-up"
+            id="scroll-top"></i></button>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.querySelector(".scroll-top").style.display = "block";
+            } else {
+                document.querySelector(".scroll-top").style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
-
-<button class="scroll-top" onclick="scrollToTop()"><i aria-label="ScrollTop" class="fa fa-angle-up"
-        id="scroll-top"></i></button>
-
-<script>
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    window.onscroll = function () {
-        scrollFunction();
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.querySelector(".scroll-top").style.display = "block";
-        } else {
-            document.querySelector(".scroll-top").style.display = "none";
-        }
-    }
-</script>
