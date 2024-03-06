@@ -11,7 +11,32 @@ body {
   padding: 0;
 }
 
+.light-mode {
+  background-color: #ffffff;
+}
+
+.dark-mode {
+  background-color: #000000;
+}   
+
+.light-mode .parallax, .light-mode .parallax__cover{
+  background-color: #ffffff;
+}
+
+.dark-mode .parallax, .dark-mode .parallax__cover{
+  background-color: #000000;
+} 
+
+.light-mode *{
+  color: rgb(0, 0, 0);
+}
+
+.dark-mode *{
+  color: white;
+}   
+
 header {
+  color: inherit;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,43 +49,42 @@ header {
 }
 
 .logo {
-  color: #ffffff;
+  color: inherit;
   font-size: 25px;
   text-decoration: none;
   font-weight: 600;
 }
 
 .navbar a {
-  color: #ffffff;
   font-size: 18px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
   text-decoration: none;
   font-weight: 500;
   margin-left: 35px;
+  margin: 2% auto;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  cursor: pointer;
+  overflow: hidden;
   transition: .3s;
 }
 
-.switch:hover {
-  color: white;
+.light-mode .navbar a:hover {
+  background: #ffffff;
+  color: #a9a9a9;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255, 255, 255));
 }
 
-a:hover {
-  color: #000000;
+.dark-mode .navbar a:hover {
+  background: #000000;
+  color: #a9a9a9;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0));
 }
-
-.light-mode {
-  background-color: #ffffff;
-  /*background-image: url('public/bg1.jpeg');
-background-size: cover;*/
-  color: white;
-}
-
-.dark-mode {
-  background-color: #000000;
-  /*background-image: url('public/bg2.jpg');
-background-size: cover;*/
-  color: white;
-}   
-
 .parallax {
   perspective: 100px;
   width: 100%;
@@ -73,7 +97,6 @@ background-size: cover;*/
   margin: 0;
   padding: 0;
 }
-
 .parallax__content {
   transform: translateZ(-350px) scale(4.5);
   min-width: 100vw;
@@ -99,7 +122,6 @@ background-size: cover;*/
 }
 
 .parallax__cover {
-  background: rgba(0, 0, 0);
   position: absolute;
   top: 100%;
   width: 100%;
@@ -108,7 +130,7 @@ background-size: cover;*/
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: inherit;
   left: 0;
   right: 0;
   z-index: 2;
@@ -132,7 +154,71 @@ p {
   margin-bottom: 20px;
 }
 
-#About a {
+.light-mode #About a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 2% auto;
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  margin-right: 50px;
+
+}
+
+.light-mode #About a:hover {
+  background: #ffffff;
+  color: #a9a9a9;
+  box-shadow: 0 0 5px #000000,
+      0 0 25px #000000,
+      0 0 50px #000000,
+      0 0 200px #000000;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255, 255, 255));
+}
+
+.light-mode #About a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #000000);
+  animation: animate1 1s linear infinite;
+}
+.light-mode #About a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #000000);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.light-mode #About a span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #000000);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+
+.light-mode #About a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #000000);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.dark-mode #About a {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -148,7 +234,7 @@ p {
 
 }
 
-#About a:hover {
+.dark-mode #About a:hover {
   background: #000000;
   color: #a9a9a9;
   box-shadow: 0 0 5px #000000,
@@ -158,20 +244,12 @@ p {
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
-#About a:nth-child(1) {
-  filter: hue-rotate(270deg);
-}
-
-#About a:nth-child(2) {
-  filter: hue-rotate(110deg);
-}
-
 #About a span {
   position: absolute;
   display: block;
 }
 
-#About a span:nth-child(1) {
+.dark-mode #About a span:nth-child(1) {
   top: 0;
   left: 0;
   width: 100%;
@@ -191,7 +269,7 @@ p {
   }
 }
 
-#About a span:nth-child(2) {
+.dark-mode #About a span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -212,7 +290,7 @@ p {
   }
 }
 
-#About a span:nth-child(3) {
+.dark-mode #About a span:nth-child(3) {
   bottom: 0;
   right: 0;
   width: 100%;
@@ -233,7 +311,7 @@ p {
   }
 }
 
-#About a span:nth-child(4) {
+.dark-mode #About a span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
@@ -252,22 +330,4 @@ p {
   100% {
       bottom: 100%;
   }
-}
-
-.scroll-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #03e9f4;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  display: none;
-  z-index: 1000;
-}
-
-.scroll-top:hover {
-  background-color: #00bcd4;
 }

@@ -8,26 +8,25 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.58/build/spline-viewer.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="dark-mode">
     <header>
-        <a href="#" class="logo">Logo</a>
+        <a href="#" class="logo">Phablet._</a>
         <nav class="navbar">
             <a href="#About">About</a>
-            <a href="#About">About</a>
-            <a href="Contact">Contact</a>
-            <a class="switch" onclick="myFunction()">
-                <i id="switch" class="fa-solid fa-moon"></i>
-                <i class="fa-light fa-sun-bright"></i>
+            <a href="Contact/">Contact</a>
+            <a id="switch" class="switch" onclick="toggleTheme()">
+                <i class="material-icons">&#xe430;</i>
             </a>
         </nav>
     </header>
     <div class="parallax">
-        <div class="parallax__content">
-            <spline-viewer url="https://prod.spline.design/J7UmrpD2GUpRdEUW/scene.splinecode" style="color: black;"></spline-viewer>
+        <div id="container" class="parallax__content">
+            <spline-viewer id="particles" url="https://prod.spline.design/J7UmrpD2GUpRdEUW/scene.splinecode"></spline-viewer>
         </div>
         <div id="About" class="parallax__cover">
             <div class="cover__content">
@@ -36,7 +35,7 @@
                     encryption scheme designed to safeguard plaintext data. It encompasses a series of
                     sequential steps, integrating various sophisticated cryptographic techniques such as
                     substitution-permutation networks (SPNs)</p>
-                <a href="#">
+                <a href="Hash/">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -46,27 +45,37 @@
             </div>
         </div>
     </div>
-    <button class="scroll-top" onclick="scrollToTop()"><i aria-label="ScrollTop" class="fa fa-angle-up"
-            id="scroll-top"></i></button>
-
     <script>
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        function toggleTheme() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+            body.classList.toggle("light-mode");
+
+            var iconElement = document.getElementById("switch").getElementsByTagName("i")[0];
+            var viewerContainer = document.getElementById("container");
+
+            // Remove existing spline-viewer
+            viewerContainer.innerHTML = '';
+
+            if (body.classList.contains("dark-mode")) {
+                iconElement.innerHTML = '&#xf186;';
+                iconElement.classList.remove("material-icons");
+                iconElement.classList.add("fa");
+                createSplineViewer("https://prod.spline.design/J7UmrpD2GUpRdEUW/scene.splinecode");
+            } else {
+                iconElement.innerHTML = '&#xe430;';
+                iconElement.classList.remove("fa");
+                iconElement.classList.add("material-icons");
+                createSplineViewer("https://prod.spline.design/yhPrEjjGmAYNZdEm/scene.splinecode");
+            }
         }
 
-        window.onscroll = function () {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.querySelector(".scroll-top").style.display = "block";
-            } else {
-                document.querySelector(".scroll-top").style.display = "none";
-            }
+        function createSplineViewer(url) {
+            var viewerContainer = document.getElementById("container");
+            var newViewer = document.createElement("spline-viewer");
+            newViewer.setAttribute("id", "particles");
+            newViewer.setAttribute("url", url);
+            viewerContainer.appendChild(newViewer);
         }
     </script>
 </body>
