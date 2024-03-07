@@ -14,36 +14,47 @@
 </head>
 
 <body class="dark-mode">
-    <header>
-        <a href="#" class="logo">Phablet._</a>
-        <nav class="navbar">
-            <a href="#About">About</a>
-            <a href="Contact/">Contact</a>
-            <a id="switch" class="switch" onclick="toggleTheme()">
-                <i class="material-icons">&#xe430;</i>
-            </a>
-        </nav>
-    </header>
-    <div class="parallax">
-        <div id="container" class="parallax__content">
-            <spline-viewer id="particles" url="https://prod.spline.design/J7UmrpD2GUpRdEUW/scene.splinecode"></spline-viewer>
-        </div>
-        <div id="About" class="parallax__cover">
-            <div class="cover__content">
-                <h2>What is Phablet?</h2>
-                <p>The Phablet encryption algorithm is an intricate and robust multi-layered
-                    encryption scheme designed to safeguard plaintext data. It encompasses a series of
-                    sequential steps, integrating various sophisticated cryptographic techniques such as
-                    substitution-permutation networks (SPNs)</p>
-                <a href="Hash/">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Give it a Try
+    <div id="portraitContent">
+        <video autoplay muted loop width="100%">
+            <source src="public/rotate.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="landscapeContent">
+        <div class="header">
+            <a href="#" class="logo">Phablet._</a>
+            <nav class="navbar">
+                <a href="#About">About</a>
+                <a href="Contact/">Contact</a>
+                <a id="switch" class="switch" onclick="toggleTheme()">
+                    <i class="material-icons">&#xe430;</i>
                 </a>
-            </div>
+            </nav>
         </div>
+        <div class="parallax">
+            <div id="container" class="parallax__content">
+                <spline-viewer id="particles"
+                    url="https://prod.spline.design/J7UmrpD2GUpRdEUW/scene.splinecode"></spline-viewer>
+            </div>
+            <div id="About" class="parallax__cover">
+                <div class="cover__content">
+                    <h2>What is Phablet?</h2>
+                    <p>The Phablet encryption algorithm is an intricate and robust multi-layered
+                        encryption scheme designed to safeguard plaintext data. It encompasses a series of
+                        sequential steps, integrating various sophisticated cryptographic techniques such as
+                        substitution-permutation networks (SPNs)</p>
+                    <a href="Hash/">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Give it a Try
+                    </a>
+                </div>
+            </div>
+            <!--<div class="parallax__content">
+        </div>-->
+        </div>
+
     </div>
     <script>
         function toggleTheme() {

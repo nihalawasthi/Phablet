@@ -2,7 +2,17 @@
 * {
   box-sizing: border-box;
 }
+@media screen and (orientation: landscape) {
+  #portraitContent {
+      display: none;
+  }
+}
 
+@media screen and (orientation: portrait) {
+  #landscapeContent {
+      display: none;
+  }
+}
 html,
 body {
   overflow-x: hidden;
@@ -35,7 +45,7 @@ body {
   color: white;
 }   
 
-header {
+.header {
   color: inherit;
   position: fixed;
   top: 0;
