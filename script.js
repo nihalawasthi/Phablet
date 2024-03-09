@@ -37,3 +37,9 @@ function createSplineViewer(url) {
     newViewer.setAttribute("url", url);
     viewerContainer.appendChild(newViewer);
 }
+
+const container = document.querySelector('.container');
+
+container.addEventListener('click', function () {
+    this.classList.toggle('rotated');
+});
