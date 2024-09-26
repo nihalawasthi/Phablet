@@ -1,0 +1,341 @@
+:root {
+  --first-color: hsl(0, 0%, 0%);
+  --title-color: hsl(244, 4%, 36%);
+  --text-color: hsl(0, 0%, 41%);
+  --body-color: hsl(0, 0%, 100%);
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 3rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+body 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+}
+section 
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+section::before 
+{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#000,#0f0,#000);
+  animation: animate 5s linear infinite;
+}
+@keyframes animate 
+{
+  0%
+  {
+    transform: translateY(-100%);
+  }
+  100%
+  {
+    transform: translateY(100%);
+  }
+}
+section span 
+{
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw - 2px);
+  background: #181818;
+  z-index: 2;
+  transition: 1.5s;
+}
+section span:hover 
+{
+  background: #0f0;
+  transition: 0s;
+}
+
+section .signin
+{
+  position: absolute;
+  width: 500px;
+  background: #222;  
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+section .signin .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+section .signin .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+section .signin .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+section .signin .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+section .signin .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+.signin .content .form .links 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.signin .content .form .links a 
+{
+  color: #fff;
+  text-decoration: none;
+}
+.signin .content .form .links a:nth-child(2)
+{
+  color: #0f0;
+  font-weight: 600;
+}
+.signin .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: #0f0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
+@media (max-width: 900px)
+{
+  section span 
+  {
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
+  }
+}
+@media (max-width: 600px)
+{
+  section span 
+  {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
+  }
+}
+section .signin .content h2 
+ {
+  margin: 0;
+  font-size: 1.7em;
+  color: #0f0;
+  text-transform: uppercase;
+ }
+ h2 span {
+   all: unset;
+   color: white;
+ }
+ h2 span:hover{
+   all: unset;
+ }
+ body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.4vw
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent
+}
+
+body::-webkit-scrollbar-track:hover {
+  background-color: transparent
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 5px solid transparent
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a5;
+}
+
+body::-webkit-scrollbar-button {
+  display: none
+}
+
+.inputs {
+  row-gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input {
+  border: 1px solid #9e9e9e;
+  transition: 150ms cubic-bezierle(0.4, 0, 0.2, 1);
+  width: calc(100% - 1.25vw);
+  padding: 0.729vw 0.625vw;
+  border-radius: 6px;
+  border: 2px solid var(--text-color);
+  background-color: #333;
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  transition: border 0.4s;
+  margin-bottom: 1vh;
+}
+
+.label {
+  position: absolute;
+  top: 1rem;
+  left: 1em;
+  color: #4d4d41;
+  pointer-events: none;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 0.25rem;
+}
+
+.input:focus {
+  border: 1px solid rgba(156, 156, 156, 0.2);
+}
+
+.input:is(:focus, :valid)~label {
+  color: white;
+  transform: translateY(-130%) scale(0.7);
+  background-color: #333;
+  padding-inline: 0.3rem;
+}
+
+
+textarea.input {
+  width: 100%;
+  color: white;
+  font-size: 1.5em;
+  resize: vertical;
+  min-height: 200px;
+}
+
+input,
+button {
+  font-family: var(--body-font);
+  border: none;
+  outline: none;
+}
+
+._form,
+.inputs {
+  display: grid;
+}
+
+._img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+._form {
+  position: relative;
+  background-color: hsla(244, 16%, 92%, 0.6);
+  border: 2px solid hsla(244, 16%, 92%, 0.75);
+  margin-inline: 1.5rem;
+  row-gap: 1.25rem;
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.title {
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+  justify-self: center;
+}
+
+.title span {
+  color: var(--first-color);
+  margin-left: 10px;
+}
+
+._form {
+  min-width: 50vw;
+  max-width: 900px;
+  justify-self: center;
+}
+
+.input-group button:hover {
+  background: #2a2a2a;
+  color: #a9a9a9;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}

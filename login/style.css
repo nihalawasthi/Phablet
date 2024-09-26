@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #000000;
+}
+.hero{
+  position: fixed;
+  top: 0;
+}
+
+.hero-cont {
+  height: 100vh;
+  background: linear-gradient(
+      to right, 
+      #ffffff 0%, 
+      #ffffff 70%, 
+      #000000 70%, 
+      #000000 100%
+  );
+  display: flex;
+  font-family: monospace;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.hero .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.left, .right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-family: 'Arial', sans-serif;
+    z-index: 2;
+    overflow: hidden;
+    position: relative;
+}
+
+.left {
+    background-color: #ffffff;
+    transform: skewX(-30deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5%;
+}
+
+.right {
+    background-color: #000000;
+    color: #ffffff;
+    transform: skewX(-30deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5%;
+}
+
+.right a, .left a{
+    text-align: center;
+    color: inherit;
+    transform: skewX(30deg);
+    text-decoration: none;
+    width: 100vw;
+    margin: 0;
+    z-index: 5000;
+}
+.cursor {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+.cursor__ball {
+    position: fixed;
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+.cursor__ball--big circle,
+.cursor__ball--small circle {
+    fill: #ffffff;
+}
+
+.cursor__ball--big.in-left circle,
+.cursor__ball--small.in-left circle {
+    fill: #000000;
+}
+
+.cursor__ball--big.in-right circle,
+.cursor__ball--small.in-right circle {
+    fill: #ffffff;
+}
+
+.pop{
+  min-height:100vh; 
+  display:flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.signin
+{
+  position: absolute;
+  width: 400px;
+  background: #222;  
+  z-index: 1000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,9);
+}
+.signin .content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+.signin .content h2 
+{
+  font-size: 2em;
+  color: #fff;
+  text-transform: uppercase;
+}
+.signin .content .form 
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.signin .content .form .inputBox
+{
+  position: relative;
+  width: 100%;
+}
+.signin .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+.signin .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #aaa;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+}
+.signin .content .form .links 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.signin .content .form .links a 
+{
+  color: #fff;
+}
+.signin .content .form .links a:nth-child(2)
+{
+  color: #fff;
+  font-weight: 600;
+}
+.signin .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
+
+.signin:target{
+  display: flex;
+}

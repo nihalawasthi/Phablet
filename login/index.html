@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / SignUp</title>
+    <link rel="shortcut icon" href="../public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.58/build/spline-viewer.js"></script>
+</head>
+
+<body>
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big">
+            <svg height="30" width="30">
+                <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+            </svg>
+        </div>
+        <div class="cursor__ball cursor__ball--small">
+            <svg height="10" width="10">
+                <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+            </svg>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="hero-cont">
+            <div class="container">
+                <div class="left">
+                    <a href="#login">Login</a>
+                </div>
+                <div class="right">
+                    <a href="#Signup">SignUp</a>
+                </div>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="public/d2.png" class="slide">
+        </div>
+    </section>
+    <section class="pop">
+        <div class="signin" id="login">
+            <div class="content">
+                <h2>Login</h2>
+                <div class="form">
+                    <div class="inputBox">
+                        <input type="text" id="username" name="user" required> <i>Username</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="password" name="password" required> <i>Password</i>
+                    </div>
+                    <div class="links"> Create a account? <a href="#Signup">Signup</a>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Login" onclick="login(); event.preventDefault();">
+                    </div>                    
+                </div>
+            </div>
+                <a href="#" style="
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        color: #fe0606;
+                        font-size: 30px;
+                        text-decoration: none;
+                    ">&times;</a>
+        </div>
+        <div class="signin" id="Signup">
+            <div class="content">
+                <h2>SignUp</h2>
+                <div class="form">
+                    <div class="inputBox">
+                        <input type="text" id="signupUsername" name="user" required> <i>Username</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" id="signupEmail" name="email" required> <i>Email</i>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="signupPassword" name="password" required> <i>Password</i>
+                    </div>
+                    <div class="links"> Already have a account? <a href="#login">Login</a>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="SignUp" onclick="signup(); event.preventDefault();">
+                    </div>                    
+                </div>
+            </div>
+            <a href="#" style="
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    color: #fe0606;
+                    font-size: 30px;
+                    text-decoration: none;
+                ">&times;</a>
+        </div>
+    </section>
+    <script src="cursor.js"></script>
+    <script src="../function.js"></script>
+</body>
+
+</html>

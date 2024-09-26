@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Phablet</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="public/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="card-container">
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span>
+       
+        <div class="card">
+            <div id="Encrypt" class="signin">
+                <div class="content">
+                    <h2 id="flip-to-decrypt">Encrypt &#8651;</h2>
+                    <div class="form">
+                        <div class="inputBox">
+                            <input type="text" id="plaintext" required> <i>Plain Text</i>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" onclick="encrypt()" value="Encrypt">
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" id="encryptedOutput" class="Output" required> <i>Encrypted Text : </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="Decrypt" class="signin">
+                <div class="content">
+                    <h2 id="flip-to-encrypt">Decrypt &#8651;</h2>
+                    <div class="form">
+                        <div class="inputBox">
+                            <input type="text" id="encryptedtext" required> <i>Encrypted Text</i>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Decrypt" onclick="decrypt()">
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" id="decryptedOutput" class="Output" required> <i>Plain Text : </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <script src="../function.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const encryptHeader = document.getElementById("flip-to-decrypt");
+            const decryptHeader = document.getElementById("flip-to-encrypt");
+            const cardContainer = document.querySelector(".card-container");
+        
+            if (encryptHeader && decryptHeader) {
+            encryptHeader.addEventListener("click", function() {
+                cardContainer.classList.add("flipped");
+                document.documentElement.style.setProperty('--header-color', 'skyblue');
+            });
+        
+            decryptHeader.addEventListener("click", function() {
+                cardContainer.classList.remove("flipped");
+                document.documentElement.style.setProperty('--header-color', '#4A20AD');
+            });
+            }
+        });
+    </script>
+      
+      
+</body>
