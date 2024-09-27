@@ -1,3 +1,5 @@
+const serverURL = "http://phablet.up.railway.app:8080"
+
 const hash = () => {
     const keys = getKeys();
     if (!keys) {
@@ -22,7 +24,7 @@ const hash = () => {
         redirect: "follow"
     };
 
-    fetch("http://127.0.0.1:8000/api/M1/hash", requestOptions)
+    fetch(`${serverURL}/api/M1/hash`, requestOptions)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -60,7 +62,7 @@ const decrypt = () => {
         redirect: "follow"
     };
 
-    fetch("http://127.0.0.1:8000/api/M2/decrypt/", requestOptions)
+    fetch(`${serverURL}/api/M2/decrypt/`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
             document.getElementById("decryptedOutput").value = result.decrypted_data;
@@ -88,7 +90,7 @@ const encrypt = () => {
         redirect: "follow"
     };
 
-    fetch("http://127.0.0.1:8000/api/M2/encrypt/", requestOptions)
+    fetch(`${serverURL}/api/M2/encrypt/`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
             document.getElementById("encryptedOutput").value = result.encrypted_data;
@@ -117,7 +119,7 @@ const login = () => {
         redirect: "follow"
     };
 
-    fetch("http://127.0.0.1:8000/api/login/", requestOptions)
+    fetch(`${serverURL}/api/login/`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
             if (result.keys) {
@@ -149,7 +151,7 @@ const signup = () => {
         redirect: "follow"
     };
 
-    fetch("http://127.0.0.1:8000/api/signup/", requestOptions)
+    fetch(`${serverURL}/api/signup/`, requestOptions)
         .then((response) => response.json())
         .then((result) => {
             window.location.href = "#login";

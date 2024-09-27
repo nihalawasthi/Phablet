@@ -28,7 +28,7 @@ function isInLeftSection(xPosition) {
 
 document.body.addEventListener('mousemove', onMouseMove);
 
-gsap.from(".left p", {
+gsap.from(".left a", {
     duration: 1.5,
     y: 50,
     opacity: 0,
@@ -36,7 +36,7 @@ gsap.from(".left p", {
     delay: 0.5
 });
 
-gsap.from(".right p", {
+gsap.from(".right a", {
     duration: 1.5,
     y: 50,
     opacity: 0,
