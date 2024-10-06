@@ -282,7 +282,7 @@ textarea.input {
   color: white;
   font-size: 1.5em;
   resize: vertical;
-  min-height: 200px;
+  min-height: 100px;
 }
 
 input,

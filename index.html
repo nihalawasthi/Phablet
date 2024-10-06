@@ -20,11 +20,11 @@
                 <a href="#" class="logo">Phablet._</a>
                 <nav class="navbar">
                     <a href="#About">About</a>
-                    <a href="Contact/">Contact</a>
+                    <a href="#Contact">Contact</a>
                     <a id="switch" class="switch" onclick="toggleTheme()">
                         <i class="material-icons">&#xe430;</i>
                     </a>
-                    <a href="login/" class="button"><span class="original-text">Login</span><span class="hover-text">SignUp</span></a>
+                    <a href="login/" onclick="checkSession(event)" class="button"><span class="original-text">Login</span><span class="hover-text">SignUp</span></a>
                 </nav>
             </div>
             <div id="container" class="content">
@@ -203,6 +203,19 @@
             </div>
         </div>
     <script src="script.js"></script>
+    <script src="function.js"></script>
+    <script>
+        if (keys !== undefined && Object.keys(keys).length > 0) {
+            const loginButton = document.querySelector('.button');
+            const logo = `<span class="original-text">LogOut</span><span class="hover-text">LogOut</span>`;
+            const logs = `<span class="original-text">Login</span><span class="hover-text">SignUp</span>`;
+            loginButton.innerHTML = logo;
+            loginButton.onclick = () => {
+            logout();
+            loginButton.innerHTML = logs;
+        };
+        }
+    </script>
 </body>
 </body>
 
