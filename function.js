@@ -1,4 +1,4 @@
-const serverURL = "https://phablet.up.railway.app"
+const serverURL = "http://13.233.236.112"
 
 const hash = () => {
     const keys = getKeys();
