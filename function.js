@@ -1,4 +1,4 @@
-const serverURL = "http://13.233.236.112"
+const serverURL = "https://api.nihalawasthi.me"
 
 const hash = () => {
     const keys = getKeys();
